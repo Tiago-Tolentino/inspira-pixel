@@ -1,8 +1,9 @@
 <script setup>
+import Header from "./components/Header.vue"
 </script>
 
 <template>
-<h1>pagina principal</h1>
+<Header/>
 </template>
 
 <style scoped>

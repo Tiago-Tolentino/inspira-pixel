@@ -4,16 +4,17 @@ import logo from "../assets/logo.png"
 </script>
 
 <template>
-    <img src="logo" alt="">
+    <img src="logo" alt="logo">
     <nav>
         <li>
             <a href="">
-                <Icon icon="material-symbols:search"/>
+                 <Icon class="search-icon" icon="material-symbols:search" />
             </a>
         </li>
     </nav>
 </template>
 
-<style>
+<style scoped lang="scss">
 
 </style>
+
