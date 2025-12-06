@@ -11,13 +11,13 @@ defineProps(["imagem"])
 
 <style scoped lang="scss">
 .card{
-    // border: solid;
-    width: 35vw;
-    // height: 60vh;
+    width: 15vw;
+    height: 45vh;
     img{
         width: 100%;
         height: 100%;
         border-radius: 10px;
+        object-fit: cover;
     }
 }
 </style>

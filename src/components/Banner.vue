@@ -18,17 +18,16 @@ import fotografo from "../assets/fotografo.png"
 <style scoped lang="scss">
     .banner{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         margin: 2rem;
         span{
-            color: red;
+            color: #E1306C;
             font-size: 4.5rem;
         }
     }
 
     div{
-        border: solid;
-        width: 70vw;
+        width: 60vw;
         display: flex;
         flex-direction: column;
         justify-content: center;

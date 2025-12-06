@@ -1,13 +1,31 @@
 <script setup>
+// imports
 import Card from './Card.vue';
+import axios from 'axios';
+import { ref } from 'vue';
+
+const imagens = ref([])
+
+// funcao assincrona ->
+
+async function carregarImagens(){
+    const res = await axios.get("https://picsum.photos/v2/list?page=3&limit=30");
+
+    imagens.value = res.data;
+    console.log(res)
+}
+
+carregarImagens();
 </script>
 
 <template>
     <h2>Inpire-se</h2>
     <section class="inspire">
-    <Card imagem="https://upload.wikimedia.org/wikipedia/commons/6/60/Mount_Fuji_from_Lake_Shoji_%2815443819010%29.jpg"/>
-    <Card imagem="https://static.vecteezy.com/ti/fotos-gratis/p2/7304605-fuji-san-montanha-reflexao-no-lago-kawaguchiko-ao-nascer-do-sol-foto.jpg"/>
-    <Card imagem="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2022/05/26/874995092-flor-de-cerejeira-para-jardim-foto-kapali-hesap.jpg"/>
+    <Card
+    v-for="img in imagens"
+    :imagem="img.download_url"
+    />
+    
     </section>
 </template>
 
@@ -15,6 +33,7 @@ import Card from './Card.vue';
 .inspire, h2{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 10px;
     margin: 2rem;
 }
